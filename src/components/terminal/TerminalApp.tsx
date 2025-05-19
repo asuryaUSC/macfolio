@@ -257,9 +257,15 @@ const TerminalApp: React.FC<TerminalAppProps> = ({ onClose }) => {
       return;
     }
 
-    // static
+    // static (including random fortune)
     else if (staticCommands[lower]) {
-      outputLines = staticCommands[lower].output;
+      if (lower === 'fortune') {
+        const fortunes = staticCommands[lower].output;
+        const randomIndex = Math.floor(Math.random() * fortunes.length);
+        outputLines = [fortunes[randomIndex]];
+      } else {
+        outputLines = staticCommands[lower].output;
+      }
     }
 
     // fallback

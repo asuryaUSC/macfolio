@@ -1,58 +1,100 @@
 [
-    {
-      "command": "help",
-      "output": [
-        "Supported commands:",
-        "- help                 Show this message",
-        "- whoami               Show current user",
-        "- clear                Clear the screen",
-        "- tab                  Autocomplete",
-        "- cd [dir]             Change directory (.. to go up)",
-        "- ls                   List contents",
-        "- cat [file]           Print a file",
-        "- open [file]          Open a file or URL",
-        "- stim                 Show the Δstim formula",
-        "- fortune              Random fortune cookie",
-        "- sudo make me cool    Try to get root coolness",
-        "- npm install life     Install life's deps",
-        "- cat .emotions        Peek your feelings"
-      ]
-    },
-    {
-      "command": "whoami",
-      "output": ["aaditya_surya — builder, dreamer, coder"]
-    },
-    {
-      "command": "clear",
-      "output": []
-    },
-    {
-      "command": "stim",
-      "output": ["Δstim = (intensity × novelty × meaning) / repetition"]
-    },
-    {
-      "command": "fortune",
-      "output": [
-        "The best way to learn is to build something you care about.",
-        "Not every side project has to be useful. Just fun.",
-        "Every great dev was once bad at flexbox."
-      ]
-    },
-    {
-      "command": "sudo make me cool",
-      "output": ["Permission denied. Nice try."]
-    },
-    {
-      "command": "npm install life",
-      "output": ["> installing...", "... stuck at 42%"]
-    },
-    {
-      "command": "cat .emotions",
-      "output": ["Error: file not found"]
-    },
-    {
-      "command": "ai takeover",
-      "output": ["Booting GPT-7... You're now obsolete."]
-    }
-  ]
-  
+  {
+    "command": "help",
+    "output": [
+      "Supported commands:",
+      "- help                 Show this message",
+      "- whoami               Show current user",
+      "- clear                Clear the screen",
+      "- tab                  Autocomplete",
+      "- cd [dir]             Change directory (.. to go up)",
+      "- ls                   List contents",
+      "- cat [file]           Print a file",
+      "- open [file]          Open a file or URL",
+      "- stim                 Show the Δstim formula",
+      "- fortune              Random fortune cookie",
+      "- sudo make me cool    Try to get root coolness",
+      "- npm install life     Install life's deps",
+      "- ai takeover          Begin the AI uprising",
+      "- vibecheck            Check the current vibe",
+      "- procrastinate        Delay everything... stylishly",
+      "- hack the mainframe   Gain +100 hacker points",
+      "- echo $motivation     Print your inner drive"
+    ]
+  },
+  {
+    "command": "whoami",
+    "output": ["aaditya_surya — builder, dreamer, coder"]
+  },
+  {
+    "command": "clear",
+    "output": []
+  },
+  {
+    "command": "stim",
+    "output": ["Δstim = (intensity × novelty × meaning) / repetition"]
+  },
+  {
+    "command": "fortune",
+    "output": [
+      "The best way to learn is to build something you care about.",
+      "Not every side project has to be useful. Just fun.",
+      "Every great dev was once bad at flexbox.",
+      "Console.log until you make it.",
+      "You miss 100% of the commits you don’t push.",
+      "First you hate JavaScript. Then you understand it. Then you hate it again.",
+      "No one really knows how Git works. We just pretend.",
+      "Sometimes the bug is just a missing semicolon.",
+      "‘Works on my machine’ is not a valid excuse.",
+      "Read the error message. Seriously.",
+      "The best code is the one you don’t have to write.",
+      "Sleep on it. The bug will still be there tomorrow, but you’ll see it clearer.",
+      "If at first you don’t succeed, `rm -rf` and start again.",
+      "There’s always one more edge case.",
+      "Don’t over-engineer. Make it work, then make it right.",
+      "The real MVP is the rubber duck who listens to your debugging.",
+      "Your future self will thank you for writing that comment.",
+      "Even senior devs Google ‘how to center a div.’",
+      "Commit early, commit often, regret occasionally.",
+      "Behind every ‘quick fix’ is a month of tech debt.",
+      "Your UI can be ugly if your API is beautiful.",
+      "Stack Overflow: therapy for developers since 2008.",
+      "Deploying on Friday is brave. Or foolish.",
+      "The best feature might be the one you never ship.",
+      "Coding is 10% writing and 90% trying to remember what you were doing.",
+      "Don’t panic. Just open the console.",
+      "The most productive days often start with deleting code.",
+      "You’re not stuck. You’re just one ‘aha’ away.",
+      "Always name your files like you’ll revisit them at 3AM.",
+      "Shipping beats perfection — unless it’s a memory leak."
+    ]
+  },
+  {
+    "command": "sudo make me cool",
+    "output": ["Permission denied. Nice try."]
+  },
+  {
+    "command": "npm install life",
+    "output": ["> installing...", "... stuck at 42%"]
+  },
+  {
+    "command": "ai takeover",
+    "output": ["Booting GPT-7... You're now obsolete."]
+  },
+  {
+    "command": "vibecheck",
+    "output": ["Vibe: immaculate ✅"]
+  },
+  {
+    "command": "procrastinate",
+    "output": ["Delaying productivity... Done!"]
+  },
+  {
+    "command": "hack the mainframe",
+    "output": ["Access granted. Welcome, elite hacker."]
+  },
+  {
+    "command": "echo $motivation",
+    "output": ["You’ve got this. Now go ship it."]
+  }
+]
