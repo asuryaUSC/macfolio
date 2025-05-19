@@ -9,7 +9,7 @@ const useIsMobile = () => {
 
   React.useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    const mobileDevices = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
+    const mobileDevices = /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i;
     setIsMobile(mobileDevices.test(userAgent));
   }, []);
 
