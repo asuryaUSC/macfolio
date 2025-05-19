@@ -1,0 +1,31 @@
+[
+    {
+      "question": "Why product management over software engineering?",
+      "answer": "I enjoy building, but I love asking why we build even more. Product management lets me combine my passion for tech and creation with practical application to solve real problems for real people."
+    },
+    {
+      "question": "How do you lead cross-functional teams?",
+      "answer": "By listening first and keeping things clear. Growing up across cultures taught me to listen first and align people around shared goals, not just tasks."
+    },
+    {
+      "question": "How do you handle setbacks in a product cycle?",
+      "answer": "I treat them as feedback. If something breaks or flops, I learn fast, regroup, and make sure we fail forward, not flat. It's all about iterating with purpose."
+    },
+    {
+      "question": "What’s the most meaningful product you’ve worked on?",
+      "answer": "A machine learning model to detect breast tumors for hospitals in low-resource areas. It reminded me that good tech can change lives beyond just convenience when it's built with purpose."
+    },
+    {
+      "question": "If you weren’t in tech, what would you be doing?",
+      "answer": "Teaching. I’ve taught water safety, math, CS, and much more in rural Nepal and found joy in helping others gain confidence through knowledge. That kind of impact still drives me."
+    },
+    {
+      "question": "What’s the weirdest tech idea you’ve ever had?",
+      "answer": "A Raspberry Pi Pico-powered USB kill switch I used in high school to remotely shut down my friends' computers. Just a little bit of tom foolery."
+    },
+    {
+      "question": "What app do you wish someone would build?",
+      "answer": "An AR-powered city guide like Night Sky, but for skylines. I’d love to point my phone at a view in LA and know exactly what buildings or monuments I’m looking at."
+    }
+]
+  

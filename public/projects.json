@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Quopt",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "Quopt is a sleek and addictive word puzzle game where players unscramble iconic quotes by swapping letters within words. Designed for simplicity and elegance, it brings a fresh, modern twist to classic logic challenges.\n\nSkills: React, Next.js, Tailwind CSS, Game Development\n\nClick the Safari link in this folder to see the full live project!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://quopt.vercel.app/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Webcam Image Classifier",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "This real-time browser-based machine learning app uses your webcam to classify objects live. It's built for interactivity and showcases the power of client-side computer vision, with no back-end required.\n\nSkills: React, TensorFlow.js, Machine Learning, Computer Vision\n\nClick the Safari link in this folder to try it live!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://webcamimageclassifier.vercel.app/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Genisys App Website",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "Built for Genisys App, a boutique consulting firm, this marketing site features modern branding, responsive design, and seamless user flows — all wrapped in a polished, professional aesthetic.\n\nSkills: HTML, CSS, JavaScript, Responsive Design\n\nClick the Safari link in this folder to visit the live site!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://www.gsysapp.com/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Alpha Zeta Website",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "This site was created for USC’s Alpha Zeta business fraternity, highlighting its events, recruitment, and community. Designed with a clean visual style, it's optimized for showcasing student-led impact.\n\nSkills: HTML, CSS, JavaScript, Web Development\n\nClick the Safari link in this folder to explore the site!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://www.alphazeta-sc.com/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "MenuSC",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "MenuSC is a PWA designed for USC students to check dining hall menus in a modern, mobile-first format. It features allergen filters, upcoming meal previews, and offline access through a clean, Apple-style UI.\n\nSkills: Next.js, Tailwind CSS, Firebase, Web Scraping, PWA\n\nClick the Safari link in this folder to see it in action!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://menu-sc.vercel.app/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  }
+]

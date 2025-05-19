@@ -1,0 +1,58 @@
+[
+    {
+      "command": "help",
+      "output": [
+        "Supported commands:",
+        "- help                 Show this message",
+        "- whoami               Show current user",
+        "- clear                Clear the screen",
+        "- tab                  Autocomplete",
+        "- cd [dir]             Change directory (.. to go up)",
+        "- ls                   List contents",
+        "- cat [file]           Print a file",
+        "- open [file]          Open a file or URL",
+        "- stim                 Show the Δstim formula",
+        "- fortune              Random fortune cookie",
+        "- sudo make me cool    Try to get root coolness",
+        "- npm install life     Install life's deps",
+        "- cat .emotions        Peek your feelings"
+      ]
+    },
+    {
+      "command": "whoami",
+      "output": ["aaditya_surya — builder, dreamer, coder"]
+    },
+    {
+      "command": "clear",
+      "output": []
+    },
+    {
+      "command": "stim",
+      "output": ["Δstim = (intensity × novelty × meaning) / repetition"]
+    },
+    {
+      "command": "fortune",
+      "output": [
+        "The best way to learn is to build something you care about.",
+        "Not every side project has to be useful. Just fun.",
+        "Every great dev was once bad at flexbox."
+      ]
+    },
+    {
+      "command": "sudo make me cool",
+      "output": ["Permission denied. Nice try."]
+    },
+    {
+      "command": "npm install life",
+      "output": ["> installing...", "... stuck at 42%"]
+    },
+    {
+      "command": "cat .emotions",
+      "output": ["Error: file not found"]
+    },
+    {
+      "command": "ai takeover",
+      "output": ["Booting GPT-7... You're now obsolete."]
+    }
+  ]
+  

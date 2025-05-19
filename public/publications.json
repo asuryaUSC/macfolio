@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Enhanced Breast Cancer Classification with MobileNetV2",
+      "description": "Explores tumor classification via image intensity, error mitigation, and real-time deployment with Streamlit.",
+      "link": "https://digitalcommons.butler.edu/bjur/vol10/iss1/8/",
+      "icon": "/finalKit/document.png"
+    },
+    {
+      "title": "ML Ensemble for Predicting Heart Disease",
+      "description": "Research paper using machine learning and ensemble methods for heart disease prediction.",
+      "link": "https://arxiv.org/abs/2111.08667",
+      "icon": "/finalKit/document.png"
+    }
+  ]
+  

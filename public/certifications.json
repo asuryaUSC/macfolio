@@ -1,0 +1,110 @@
+[
+  {
+    "title": "OCI Certified Foundations Associate",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "Credentialed by Oracle, this certification validates foundational knowledge of cloud computing, Oracle Cloud Infrastructure services, and best practices in security and cost management.\n\nSkills: Cloud Computing, Oracle Database, Oracle Cloud, Cybersecurity Tools\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=4698C1DDF81C2A96D15DC9E89C87F8B4C2DD4059B65D3E3292EE53B2CC396A66",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Economics, Entrepreneurship & Social Justice",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "An intensive Columbia program exploring how economic principles intersect with entrepreneurship and social justice, with a focus on inclusive innovation and ethical business models.\n\nSkills: Economics, Entrepreneurship, Social Justice, Market Analysis\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "/ColumbiaEcon.pdf",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Data Science: R Basics",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "Offered by Harvard, this course introduces R for data science, covering data types, visualization techniques, and statistical foundations critical for analysis.\n\nSkills: R Programming, Data Visualization in R, Statistical Analysis\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "https://courses.edx.org/certificates/cfd6a4e736864250a6efc7c9da936932",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Marketing Analytics Strategy",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "UC Berkeley’s course teaches how to use analytics to inform marketing strategy, including customer segmentation, campaign tracking, and performance metrics.\n\nSkills: Marketing Analytics, Data Analysis, Campaign Optimization\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "https://courses.edx.org/certificates/82b08fc45c4346d69dd06cc5d945a868",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Big Data, ML & Real World Apps",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "A Columbia-led exploration of how big data and machine learning tools are applied in real-world scenarios, with hands-on projects in R and visual storytelling.\n\nSkills: Data Visualization, Machine Learning, Big Data, R Programming\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "/ColumbiaML.pdf",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  },
+  {
+    "title": "Intro to Python for Data Science",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "This Microsoft Learn course provides a beginner-friendly foundation in Python, teaching core data science techniques including manipulation, visualization, and analysis.\n\nSkills: Python Programming, Data Manipulation, Visualization\n\nClick the Safari link in this folder to view this certificate!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Certificate",
+        "description": "",
+        "url": "https://courses.edx.org/certificates/ac76a39c3d1d4bda94b245b94b439340",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
+  }
+]
