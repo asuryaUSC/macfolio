@@ -194,7 +194,7 @@ const SafariWindow: React.FC<SafariWindowProps> = ({ onClose }) => {
         >
           <iframe
             ref={iframeRef}
-            src="https://new-portfolio-project-asuryauscs-projects.vercel.app/"
+            src="https://old-portfolio-asuryauscs-projects.vercel.app/"
             onLoad={onIFrameLoad}
             style={{
               width: '100%',
