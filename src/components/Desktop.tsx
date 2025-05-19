@@ -49,7 +49,7 @@ const Desktop: React.FC<DesktopProps> = ({ onOpenFinder, onOpenAbout, onOpenTras
       top: screenH / 2 - 120,
       left: screenW / 2 - 220,
       width: 440,
-      height: 160,
+      height: 200,
     };
   
     const isInZone = (x: number, y: number, zone: { top: number; left: number; width: number; height: number }) => {
