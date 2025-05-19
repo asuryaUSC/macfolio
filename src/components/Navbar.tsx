@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ContactCard from './ContactCard';
+import { AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [currentTime, setCurrentTime] = useState<string>('');
+  const [showContact, setShowContact] = useState<boolean>(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -21,8 +24,7 @@ const Navbar: React.FC = () => {
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 30000); // Update every 30 seconds
-
+    const interval = setInterval(updateTime, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -36,6 +38,7 @@ const Navbar: React.FC = () => {
       padding: '0 16px',
       width: '100%',
       boxSizing: 'border-box',
+      zIndex: 999,
     },
     leftSection: {
       display: 'flex',
@@ -74,31 +77,44 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.leftSection}>
-        <Image
-          src="/finalKit/apple.png"
-          alt="Apple Logo"
-          width={14}
-          height={14}
-          style={styles.appleLogo}
-        />
-        <span style={styles.title}>Aaditya Surya&apos;s Portfolio</span>
-        <a style={styles.navLink}>Contact</a>
-        <a style={styles.navLink}>Resume</a>
+    <>
+      <div style={styles.container}>
+        <div style={styles.leftSection}>
+          <Image
+            src="/finalKit/apple.png"
+            alt="Apple Logo"
+            width={14}
+            height={14}
+            style={styles.appleLogo}
+          />
+          <span style={styles.title}>Aaditya Surya&apos;s Portfolio</span>
+          <a style={styles.navLink} onClick={() => setShowContact(true)}>Contact</a>
+          <a
+            style={styles.navLink}
+            onClick={() => window.open('/resume.pdf', '_blank')}
+          >
+            Resume
+          </a>
+        </div>
+        <div style={styles.rightSection}>
+          <Image
+            src="/finalKit/navbarRight.png"
+            alt="System Icons"
+            width={100}
+            height={14}
+            style={styles.systemIcons}
+          />
+          <div style={styles.clock}>{currentTime}</div>
+        </div>
       </div>
-      <div style={styles.rightSection}>
-        <Image
-          src="/finalKit/navbarRight.png"
-          alt="System Icons"
-          width={100}
-          height={14}
-          style={styles.systemIcons}
-        />
-        <div style={{ fontSize: 14, color: '#666' }}>It&apos;s {currentTime}</div>
-      </div>
-    </div>
+
+      <AnimatePresence>
+        {showContact && (
+          <ContactCard onClose={() => setShowContact(false)} />
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
-export default Navbar; 
+export default Navbar;
