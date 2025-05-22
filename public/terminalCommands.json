@@ -13,13 +13,25 @@
       "- open [file]          Open a file or URL",
       "- stim                 Show the Δstim formula",
       "- fortune              Random fortune cookie",
-      "- sudo make me cool    Try to get root coolness",
-      "- npm install life     Install life's deps",
-      "- ai takeover          Begin the AI uprising",
-      "- vibecheck            Check the current vibe",
-      "- procrastinate        Delay everything... stylishly",
-      "- hack the mainframe   Gain +100 hacker points",
-      "- echo $motivation     Print your inner drive"
+      "",
+      "Need a break? Try: amuseme"
+    ]
+  },
+  {
+    "command": "amuseme",
+    "output": [
+      "✨ Bonus commands just for fun:",
+      "- sudo make me cool      Try to get root coolness",
+      "- npm install life       Install life's deps",
+      "- ai takeover            Begin the AI uprising",
+      "- vibecheck              Check the current vibe",
+      "- procrastinate          Delay everything... stylishly",
+      "- hack the mainframe     Gain +100 hacker points",
+      "- echo $motivation       Print your inner drive",
+      "- hydrate                Remind yourself to drink water",
+      "- burnout                Simulate emotional collapse",
+      "- rm -rf doubt           Delete all insecurities",
+      "- zen                    Breathe. Center. Compile."
     ]
   },
   {
@@ -96,5 +108,21 @@
   {
     "command": "echo $motivation",
     "output": ["You’ve got this. Now go ship it."]
+  },
+  {
+    "command": "hydrate",
+    "output": ["Reminder: Water is fuel. Go drink some 💧."]
+  },
+  {
+    "command": "burnout",
+    "output": ["🔥 Emotional meltdown initiated... just kidding. Take a break."]
+  },
+  {
+    "command": "rm -rf doubt",
+    "output": ["Successfully deleted self-doubt. Confidence level: 100%"]
+  },
+  {
+    "command": "zen",
+    "output": ["🧘‍♂️ inhale... exhale... npm run peace"]
   }
 ]

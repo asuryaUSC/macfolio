@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DesktopLayout from "@/components/DesktopLayout";
+import DeviceWarning from "@/components/DeviceWarning";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +28,13 @@ export default function RootLayout({
     <html lang="en">
       <body 
         className={`${geistSans.variable} ${geistMono.variable}`}
-        style={{ margin: 0,padding: 0, overflow: 'hidden' }}
+        style={{ margin: 0, padding: 0, overflow: 'hidden' }}
       >
-        <DesktopLayout>
-          {children}
-        </DesktopLayout>
+        <DeviceWarning>
+          <DesktopLayout>
+            {children}
+          </DesktopLayout>
+        </DeviceWarning>
       </body>
     </html>
   );

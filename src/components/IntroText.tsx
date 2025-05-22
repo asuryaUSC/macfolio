@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Typewriter } from 'react-simple-typewriter';
 import { Space_Grotesk, Playfair_Display, Roboto_Mono } from 'next/font/google';
 
 const spaceGrotesk = Space_Grotesk({
@@ -10,51 +9,134 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['700'],
   variable: '--font-space-grotesk',
 });
-
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500'],
   style: ['italic', 'normal'],
   variable: '--font-playfair',
 });
-
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-roboto-mono',
 });
 
-const IntroText: React.FC = () => {
-  const [showLine2, setShowLine2] = useState(false);
-  const [showLine3, setShowLine3] = useState(false);
-  const [showCursor1, setShowCursor1] = useState(true);
-  const [showCursor2, setShowCursor2] = useState(true);
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-  const line1 = "hello, i'm aaditya.";
-  const line2 = "this is my macfolio,";
-  const line3 = "crafted pixel by pixel.";
+// parent orchestrates a stagger on hover
+const containerVariants = {
+  rest: {},
+  hover: {
+    transition: {
+      staggerChildren: 0.03,
+    },
+  },
+};
 
-  const typeSpeed = 75;
-  const delayAfterLine = 500;
+// each letter "pops" when hovered
+const letterVariants = {
+  rest: { scale: 1, fontWeight: 400, textShadow: 'none' },
+  hover: {
+    scale: 1.3,
+    fontWeight: 800,
+    textShadow: '0 2px 4px rgba(0,0,0,0.2)',
+    transition: { duration: 0.15 },
+  },
+};
 
+interface AnimatedLineProps {
+  text: string;
+  font: string;
+  size: string;
+  italic?: boolean;
+  showCursor?: boolean;
+}
+
+const AnimatedLine: React.FC<AnimatedLineProps> = ({
+  text,
+  font,
+  size,
+  italic = false,
+  showCursor = false,
+}) => (
+  <motion.div
+    variants={containerVariants}
+    initial="rest"
+    whileHover="hover"
+    style={{
+      fontFamily: font,
+      fontSize: size,
+      color: '#000',
+      display: 'flex',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      fontStyle: italic ? 'italic' : 'normal',
+      cursor: 'default',
+      whiteSpace: 'pre',
+    }}
+  >
+    {Array.from(text).map((char, i) => (
+      <motion.span
+        key={i}
+        variants={letterVariants}
+        style={{ display: 'inline-block' }}
+      >
+        {char}
+      </motion.span>
+    ))}
+    {showCursor && (
+      <motion.span
+        style={{
+          display: 'inline-block',
+          marginLeft: '2px',
+          fontWeight: 400, // keep cursor normal weight
+        }}
+      >
+        |
+      </motion.span>
+    )}
+  </motion.div>
+);
+
+export default function IntroText() {
+  const [t1, setT1] = useState('');
+  const [t2, setT2] = useState('');
+  const [t3, setT3] = useState('');
+  const [cursorOn, setCursorOn] = useState(true);
+  const blinkRef = useRef<NodeJS.Timeout | null>(null);
+
+  const L1 = "hello, i'm aaditya.";
+  const L2 = 'this is my macfolio,';
+  const L3 = 'crafted pixel by pixel.';
+
+  // blink cursor every 500ms, store interval so we can clear it later
   useEffect(() => {
-    const totalTime1 = line1.length * typeSpeed + delayAfterLine;
-    const totalTime2 = line2.length * typeSpeed + delayAfterLine;
+    blinkRef.current = setInterval(() => setCursorOn((v) => !v), 500);
+    return () => clearInterval(blinkRef.current!);
+  }, []);
 
-    const timer1 = setTimeout(() => {
-      setShowCursor1(false);
-      setShowLine2(true);
-    }, totalTime1);
-
-    const timer2 = setTimeout(() => {
-      setShowCursor2(false);
-      setShowLine3(true);
-    }, totalTime1 + totalTime2);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+  // type all three lines in sequence
+  useEffect(() => {
+    (async () => {
+      const speed = 100; // slowed typing
+      for (let i = 0; i < L1.length; i++) {
+        setT1(L1.slice(0, i + 1));
+        await sleep(speed);
+      }
+      await sleep(300);
+      for (let i = 0; i < L2.length; i++) {
+        setT2(L2.slice(0, i + 1));
+        await sleep(speed);
+      }
+      await sleep(300);
+      for (let i = 0; i < L3.length; i++) {
+        setT3(L3.slice(0, i + 1));
+        await sleep(speed);
+      }
+      // finished typing: clear blinking and hide cursor
+      clearInterval(blinkRef.current!);
+      setCursorOn(false);
+    })();
   }, []);
 
   return (
@@ -68,76 +150,40 @@ const IntroText: React.FC = () => {
         textAlign: 'center',
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px',
+        gap: '20px',
+        whiteSpace: 'pre-wrap',
       }}
     >
-      <motion.div
-        style={{
-          fontFamily: 'var(--font-space-grotesk)',
-          fontSize: '28px',
-          fontWeight: 700,
-          color: '#000000',
-        }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-      >
-        <Typewriter
-          words={[line1]}
-          loop={1}
-          cursor={showCursor1}
-          cursorStyle="|"
-          typeSpeed={typeSpeed}
-          delaySpeed={delayAfterLine}
+      {/* Line 1 */}
+      {t1 && (
+        <AnimatedLine
+          text={t1}
+          font="var(--font-space-grotesk)"
+          size="clamp(20px, 2vw + 6px, 32px)"
+          showCursor={cursorOn && t2 === ''}
         />
-      </motion.div>
-
-      {showLine2 && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{
-            fontFamily: 'var(--font-playfair)',
-            fontSize: '40px',
-            fontStyle: 'italic',
-            color: '#000000',
-          }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        >
-          <Typewriter
-            words={[line2]}
-            loop={1}
-            cursor={showCursor2}
-            cursorStyle="|"
-            typeSpeed={typeSpeed}
-            delaySpeed={delayAfterLine}
-          />
-        </motion.div>
       )}
 
-      {showLine3 && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{
-            fontFamily: 'var(--font-roboto-mono)',
-            fontSize: '18px',
-            color: '#000000',
-          }}
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-        >
-          <Typewriter
-            words={[line3]}
-            loop={1}
-            cursor={false}
-            typeSpeed={typeSpeed}
-            delaySpeed={delayAfterLine}
-          />
-        </motion.div>
+      {/* Line 2 */}
+      {t2 && (
+        <AnimatedLine
+          text={t2}
+          font="var(--font-playfair)"
+          size="clamp(30px, 3.2vw + 6px, 60px)"
+          italic
+          showCursor={cursorOn && t3 === ''}
+        />
+      )}
+
+      {/* Line 3 */}
+      {t3 && (
+        <AnimatedLine
+          text={t3}
+          font="var(--font-roboto-mono)"
+          size="clamp(16px, 1.4vw + 4px, 24px)"
+          showCursor={cursorOn}
+        />
       )}
     </div>
   );
-};
-
-export default IntroText;
+}

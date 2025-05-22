@@ -44,12 +44,12 @@ const Desktop: React.FC<DesktopProps> = ({ onOpenFinder, onOpenAbout, onOpenTras
     const screenH = window.innerHeight - 100;
   
     // Define zones to avoid (sticky note + center text area)
-    const stickyZone = { top: 80, left: 40, width: 240, height: 260 };
+    const stickyZone = { top: 20, left: 40, width: 310, height: 300 };
     const centerTextZone = {
       top: screenH / 2 - 120,
       left: screenW / 2 - 220,
-      width: 440,
-      height: 200,
+      width: 470,
+      height: 250,
     };
   
     const isInZone = (x: number, y: number, zone: { top: number; left: number; width: number; height: number }) => {

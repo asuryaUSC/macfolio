@@ -16,155 +16,139 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-const DeviceWarning: React.FC = () => {
+const DeviceWarning: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const isMobile = useIsMobile();
 
-  if (!isMobile) return null;
-
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 99999,
-          padding: 20,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {/* Blur-only background layer */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(40px)',
-            WebkitBackdropFilter: 'blur(40px)',
-            zIndex: -1,
-          }}
-        />
-
-        {/* Modal Window */}
+  if (isMobile) {
+    return (
+      <AnimatePresence>
         <motion.div
-          initial={{ scale: 0.95, y: 20 }}
-          animate={{ scale: 1, y: 0 }}
-          exit={{ scale: 0.95, y: 20 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          key="mobile-warning"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
           style={{
-            backgroundColor: 'rgba(242,242,242,0.9)',
-            borderRadius: 14,
-            boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
-            width: '100%',
-            maxWidth: 420,
+            position: 'fixed',
+            inset: 0,
+            zIndex: 99999,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'radial-gradient(circle at 50% 30%, #fffdfb, #f3f3f3)',
+            backdropFilter: 'blur(30px)',
+            WebkitBackdropFilter: 'blur(30px)',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro", sans-serif',
             overflow: 'hidden',
-            fontFamily: "'SF Pro', 'SF Compact', -apple-system, system-ui, sans-serif",
+            padding: '0 20px',
           }}
         >
-          {/* Title Bar */}
-          <div
+          <motion.div
+            initial={{ scale: 0.92, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 24 }}
             style={{
-              height: 32,
-              backgroundColor: '#f5f5f5',
-              borderBottom: '1px solid #ddd',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              padding: '0 12px',
+              background: 'rgba(255, 255, 255, 0.75)',
+              borderRadius: 28,
+              padding: '32px 24px',
+              maxWidth: 420,
+              width: '100%',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+              textAlign: 'center',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(200,200,200,0.3)',
             }}
           >
-            <div style={{ position: 'absolute', left: 12, display: 'flex', gap: 8 }}>
-              <div style={{ width: 12, height: 12, backgroundColor: '#ff5f57', borderRadius: '50%' }} />
-              <div style={{ width: 12, height: 12, backgroundColor: '#febc2e', borderRadius: '50%' }} />
-              <div style={{ width: 12, height: 12, backgroundColor: '#28c840', borderRadius: '50%' }} />
-            </div>
-            <div style={{ fontSize: 14, fontWeight: 500, color: '#333' }}>Warning</div>
-          </div>
-
-          {/* Content */}
-          <div style={{ padding: 28, textAlign: 'center' }}>
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: -6, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              style={{ marginBottom: 16 }}
+              style={{
+                backgroundColor: '#f2f2f5',
+                borderRadius: 16,
+                padding: 16,
+                display: 'inline-flex',
+                marginBottom: 20,
+                boxShadow: 'inset 0 0 0 1px rgba(0,0,0,0.05)',
+              }}
             >
-              <FaLaptop size={36} color="#000" />
+              <FaLaptop size={28} color="#111" />
             </motion.div>
 
-            <h2
+            <motion.h2
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
               style={{
-                fontSize: 22,
+                fontSize: 20,
                 fontWeight: 600,
-                color: '#000',
-                margin: '0 0 8px 0',
+                color: '#111',
+                marginBottom: 12,
               }}
             >
-              Mac Only
-            </h2>
-            <p
+              Best Viewed on a Desktop
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
               style={{
                 fontSize: 15,
-                color: '#666',
-                margin: '0 0 12px 0',
-                lineHeight: 1.4,
+                color: '#444',
+                lineHeight: 1.5,
+                marginBottom: 12,
               }}
             >
-              This site is only optimized for Mac or Desktop devices.
-            </p>
-            <p
+              This portfolio is intentionally designed to replicate a macOS desktop experience.
+              For the full vibe, explore it on a larger screen.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
               style={{
                 fontSize: 14,
-                color: '#333',
-                margin: '0 0 24px 0',
-                lineHeight: 1.4,
+                color: '#666',
+                marginBottom: 24,
               }}
             >
-              Please open on a laptop, or use the old version below.
-            </p>
+              Prefer something lighter? Check out the classic version built for all devices.
+            </motion.p>
 
             <motion.a
               href="https://old-portfolio-asuryauscs-projects.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 10,
-                backgroundColor: '#f2f2f7',
+                backgroundColor: '#fff',
                 color: '#000',
                 padding: '10px 20px',
-                borderRadius: 8,
+                borderRadius: 12,
                 fontSize: 14,
                 fontWeight: 500,
                 textDecoration: 'none',
-                cursor: 'pointer',
-                border: '1px solid #ddd',
-                transition: 'background-color 0.2s ease',
+                border: '1px solid #d0d0d0',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#e6e6eb')}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#f2f2f7')}
             >
-              Open Old Version <FaArrowRight />
+              Open Classic Version <FaArrowRight />
             </motion.a>
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
+      </AnimatePresence>
+    );
+  }
+
+  return <>{children}</>;
 };
 
 export default DeviceWarning;
