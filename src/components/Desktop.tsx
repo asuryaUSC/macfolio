@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import DesktopIcon from './DesktopIcon';
 
@@ -26,14 +26,14 @@ const ICON_SIZE = 80; // approx height + buffer
 const Desktop: React.FC<DesktopProps> = ({ onOpenFinder, onOpenAbout, onOpenTrash }) => {
   const [positions, setPositions] = useState<{ top: number; left: number }[]>([]);
 
-  const icons: IconData[] = [
+  const icons = useMemo<IconData[]>(() => [
     { key: 'about', icon: 'folder.png', label: 'About Me', onClick: onOpenAbout },
     { key: 'resume', icon: 'pdf.png', label: 'Resume.pdf', href: '/resume.pdf' },
     { key: 'projects', icon: 'folder.png', label: 'Projects', onClick: () => onOpenFinder('projects') },
     { key: 'publications', icon: 'folder.png', label: 'Publications', onClick: () => onOpenFinder('publications') },
     { key: 'certifications', icon: 'folder.png', label: 'Certifications', onClick: () => onOpenFinder('certifications') },
     { key: 'trash', icon: 'trash.png', label: 'Trash', onClick: onOpenTrash },
-  ];
+  ], [onOpenFinder, onOpenAbout, onOpenTrash]);
 
   useEffect(() => {
     const used: { top: number; left: number }[] = [];
@@ -48,7 +48,7 @@ const Desktop: React.FC<DesktopProps> = ({ onOpenFinder, onOpenAbout, onOpenTras
     const centerTextZone = {
       top: screenH / 2 - 120,
       left: screenW / 2 - 220,
-      width: 470,
+      width: 490,
       height: 250,
     };
   
@@ -89,7 +89,7 @@ const Desktop: React.FC<DesktopProps> = ({ onOpenFinder, onOpenAbout, onOpenTras
     });
   
     setPositions(newPositions);
-  }, []);  
+  }, [icons]);  
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
