@@ -48,7 +48,6 @@ const StickyNote: React.FC = () => {
       • Visit a new place each year<br />
       • <s>Build a new portfolio</s><br />
       • Graduate alive<br />
-      • Did you like the macfolio joke?<br />
 
       <div style={{ margin: '14px 0 4px', fontWeight: 'bold' }}>Tips:</div>
       • Double-click folders to explore my work<br />
