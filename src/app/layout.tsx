@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DesktopLayout from "@/components/DesktopLayout";
 import DeviceWarning from "@/components/DeviceWarning";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable}`}
         style={{ margin: 0, padding: 0, overflow: 'hidden' }}
       >
+        <Analytics />
         <DeviceWarning>
           <DesktopLayout>
             {children}
