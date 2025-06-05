@@ -51,8 +51,7 @@ const StickyNote: React.FC = () => {
 
       <div style={{ margin: '14px 0 4px', fontWeight: 'bold' }}>Tips:</div>
       • Double-click folders to explore my work<br />
-      • Use dock apps to learn more about me<br />
-      • Terminal has ✨easter eggs✨<br />
+      • Use app in the dock to learn more about me<br />
     </motion.div>
   );
 };
