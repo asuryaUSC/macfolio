@@ -42,7 +42,6 @@ const StickyNote: React.FC = () => {
     >
       <b style={{ display: 'block', marginBottom: 4 }}>To Do:</b>
       • Drink water<br />
-      • Land my dream PM job<br />
       • <s>Move to the US</s><br />
       • Get good at chess<br />
       • Visit a new place each year<br />
@@ -50,8 +49,8 @@ const StickyNote: React.FC = () => {
       • Graduate alive<br />
 
       <div style={{ margin: '14px 0 4px', fontWeight: 'bold' }}>Tips:</div>
-      • Double-click folders to explore my work<br />
-      • Use app in the dock to learn more about me<br />
+      • Double click folders to explore my work<br />
+      • Check out the apps in the dock for some more<br />
     </motion.div>
   );
 };
