@@ -88,5 +88,24 @@
         "icon": "/finalKit/safari.png"
       }
     ]
+  },
+  {
+    "title": "HomeView360",
+    "folder": true,
+    "contents": [
+      {
+        "name": "Details.txt",
+        "description": "HomeView360 is an augmented reality furniture visualization platform built as a class project. Users can select furniture pieces and place them directly into their real-world environment through their device's camera, making interior design more intuitive and interactive.\n\nWe built the full PWA in Next.js, implemented WebXR-based AR functionality, and added a recommendation engine that suggests furniture based on user preferences and browsing patterns. This project was an incredible learning experience in AR development, 3D rendering, and scalable frontend architecture.\n\nSkills: Next.js, PWA, WebXR / AR, Recommendation Systems, UX Engineering\n\nClick the Safari link in this folder to try the live experience!",
+        "url": "",
+        "icon": "/finalKit/document.png"
+      },
+      {
+        "name": "Visit Project",
+        "description": "",
+        "url": "https://homeview360.vercel.app/",
+        "icon": "/finalKit/safari.png"
+      }
+    ]
   }
+  
 ]
